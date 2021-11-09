@@ -20,13 +20,18 @@ else {
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
+  <?php include_once("partials/head.php") ?>
   <body>
-    <h1><?= $data[1]?></h1>
-    <h3><?=$filename[2] ?></h3>
-    <a href="<?= $data[5]?>" download>download here</a>
+    <?php include_once("partials/header.php") ?>
+    <main class="main_sucess">
+      <div class="div_sucess_main">
+        <div class="sucess_div_main">
+          <h1><?= $data[1]?></h1>
+          <h3><?=$filename[2] ?></h3>
+          <a href="<?= $data[5]?>" download>download here</a>
+        </div>
+      </div>
+    </main>
+    <?php include_once("partials/footer.php") ?>
   </body>
 </html>

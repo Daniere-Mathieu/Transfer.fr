@@ -10,3 +10,7 @@ H1{margin:0px;}
 .div_form_main_home{display: flex;flex-direction: column;height: 100px;justify-content: space-between;}
 .button_form{height: 25px;border:0px black solid;border-radius: 15px;}
 .footer{display: flex;justify-content: center;align-items: center;background-color:#77b5fe; height: 10%;}
+.div_sucess_main{background-color: #77b5fe;display: flex;justify-content: center;align-items: center;border: black solid 0px;border-radius: 15px;}
+.main_sucess{display: flex;justify-content: center;flex-direction: column;align-items: center;background-color: white;flex-grow: 1;}
+.sucess_div_main{display: flex;justify-content: center;align-items: center;flex-direction: column;border: dashed white 10px;margin: 25px;padding: 95px;}
+.center_text_div{display: flex;flex-direction: column;align-items: center;}

@@ -49,7 +49,11 @@ require_once("../models/ImportModel.php");
     }
     $import = new Import($name,$_FILES["file"]["size"],$final_path);
     ImportModel::createImport($import);
-    $move = move_uploaded_file($_FILES["file"]["tmp_name"],$final_path);
+    try {
+      $move = move_uploaded_file($_FILES["file"]["tmp_name"],$final_path);
+    } catch (\Exception $e) {
+      echo $e;
+    }
     if ($move) {
       $_SESSION["id"] = $import->id;
       header('Location: ../views/sucess.php');

@@ -1,2 +1,12 @@
-body{margin: 0px;}
-.header_home{display: flex;justify-content: space-between;}
+body{margin: 0px;height: 100vh;width: 100vw;display: flex;flex-direction: column;justify-content: space-between;background-color: #77b5fe;}
+H1{margin:0px;}
+.header_home{display: flex;justify-content: space-between;padding-left:10px;padding-right: 10px;background-color: #77b5fe;height: 10%;}
+.left_side_header{display: flex;justify-content: center;align-items: center;}
+.right_side_header{display: flex;justify-content: center;align-items: center;}
+.div_right_side_header{padding-left: 10px;}
+.main_home{display: flex;justify-content: center;align-items: center;background-color: white;flex-grow: 1;}
+.div_main_home{background-color: #77b5fe;display: flex;justify-content: center;align-items: center;border: black solid 0px;border-radius: 15px;}
+.form_main_home{display: flex;justify-content: center;align-items: center;flex-direction: column;border: dashed white 10px;margin: 25px;padding: 95px;}
+.div_form_main_home{display: flex;flex-direction: column;height: 100px;justify-content: space-between;}
+.button_form{height: 25px;border:0px black solid;border-radius: 15px;}
+.footer{display: flex;justify-content: center;align-items: center;background-color:#77b5fe; height: 10%;}

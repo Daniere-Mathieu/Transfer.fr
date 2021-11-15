@@ -29,8 +29,9 @@ else {
           <h1><?= $data[1]?></h1>
           <h3><?=$filename[2] ?></h3>
           <a href="<?= $data[5]?>" download>download here</a>
-          <form class="" action="deleteController.php" method="post">
-            <input type="text" name="" value="" placeholder="token de supression">
+          <form class="" action="../controllers/deleteController.php" method="post">
+            <input type="text" name="token" value="" placeholder="token de supression">
+            <input type="hidden" name="file" value="<?php echo $_GET["name"] ?>">
             <button type="submit" name="button">Supprimer</button>
           </form>
         </div>

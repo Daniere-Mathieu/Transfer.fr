@@ -7,6 +7,12 @@ class ImportModel {
     $array = ImportModel::arrayFromImport($import);
     $data = $stockage->create($array);
   }
+  public static function deleteImport($import,$token,$name){
+    $stockage = new FileStorage("storage.csv");
+    $array = ImportModel::arrayFromImport($import);
+    $stockage->deleteOnebyToken($token,$name);
+    return true;
+  }
   public static function getImport($id) {
     $index = ImportModel::getImportIndexById($id);
     if($index === false) {

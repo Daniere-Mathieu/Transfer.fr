@@ -5,7 +5,7 @@
     private $data = [];
 
     public function __construct($table) {
-      $this->filename = "/Applications/MAMP/htdocs/data/" . $table;
+      $this->filename = "/Applications/MAMP/htdocs/transfer.fr/data/" . $table;
       $this->file = fopen($this->filename, "a+");
       while ( ($row = fgetcsv($this->file) ) !== FALSE ) {
       array_push($this->data, $row);
@@ -25,24 +25,25 @@
       $reset = [];
       fwrite($this->file,$reset);
     }
-    function deleteOnebyToken($token){
-      $t = false;
+    function deleteOnebyToken($token,$name){
+      $status = false;
       for ($i=0; $i < count($this->data); $i++) {
-        if ($this->data[$i] === $token) {
+        if ($this->data[$i][4] === $token && $this->data[$i][1] === $name) {
           unset($this->data[$i]);
-          $t = true;
+          $status = true;
         }
       }
       unlink($this->filename);
       $this->file = fopen($this->filename, "w+");
       foreach($this->data as $row) {
       fputcsv($this->file, $row);
+      return $status;
       }
     }
-    function deleteByDate(){
+    function deleteByDate($token,$name){
       $t = false;
       for ($i=0; $i < count($this->data); $i++) {
-        if ($this->data[$i] === $token) {
+        if ($this->data[$i][4] === $token && $this->data[$i][1] === $name) {
           unset($this->data[$i]);
           $t = true;
         }

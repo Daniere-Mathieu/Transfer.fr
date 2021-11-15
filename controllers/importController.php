@@ -3,6 +3,7 @@ session_start();
 require_once("../class/Import.php");
 require_once("../models/ImportModel.php");
   if (empty($_FILES["file"]) || empty($_POST["name"])) {
+    $_SESSION["Error"] = "certain champs n'ont pas été remplie";
     header('Location: ../views/fail.php');
   }
   else {
@@ -52,7 +53,7 @@ require_once("../models/ImportModel.php");
     try {
       $move = move_uploaded_file($_FILES["file"]["tmp_name"],$final_path);
     } catch (\Exception $e) {
-      echo $e;
+      $_SESSION["Error"] = "$e";
     }
     if ($move) {
       $_SESSION["id"] = $import->id;

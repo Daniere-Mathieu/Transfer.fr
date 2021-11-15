@@ -14,3 +14,4 @@ H1{margin:0px;}
 .main_sucess{display: flex;justify-content: center;flex-direction: column;align-items: center;background-color: white;flex-grow: 1;}
 .sucess_div_main{display: flex;justify-content: center;align-items: center;flex-direction: column;border: dashed white 10px;margin: 25px;padding: 95px;}
 .center_text_div{display: flex;flex-direction: column;align-items: center;}
+.hidden{visibility: hidden;}

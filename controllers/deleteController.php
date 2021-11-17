@@ -11,7 +11,7 @@ if (!empty($_POST["token"]) && !empty($_POST["file"])) {
     header('Location: ../views/home.php');
   }
   else {
-    $_SESSION["Error"] = "le fichier n'a pas été Supprimer"
+    $_SESSION["Error"] = "le fichier n'a pas été Supprimer";
     header('Location: ../views/fail.php');
   }
 

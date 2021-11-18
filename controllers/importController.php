@@ -1,19 +1,16 @@
 <?php
-session_start();
-require_once("../class/Import.php");
-require_once("../models/ImportModel.php");
   if (empty($_FILES["file"]) || empty($_POST["name"])) {
     $_SESSION["Error"] = "certain champs n'ont pas été remplie";
-    header('Location: ../views/fail.php');
+    header('Location: fail');
   }
   else {
     $name = htmlentities($_POST["name"]);
     $extension = explode(".",$_FILES["file"]["name"]);
     $exte = count($extension);
     $exte -= 1;
-    $path = "../storage/" . $_POST["name"];
-    $final_path = "../storage/" . $_FILES["file"]["name"];
-    $path_test = "../storage/" . $_FILES["file"]["name"];
+    $path = "storage/" . $_POST["name"];
+    $final_path = "storage/" . $_FILES["file"]["name"];
+    $path_test = "storage/" . $_FILES["file"]["name"];
     $a = 0;
     $b = 0;
     $add = 0;
@@ -21,7 +18,7 @@ require_once("../models/ImportModel.php");
       if (file_exists($path_test) === true) {
         $add = $add + 1;
         $path_verif = $extension[0] . $add ;
-        $path_verif = "../storage/" . $path_verif . "." . $extension[$exte];
+        $path_verif = "storage/" . $path_verif . "." . $extension[$exte];
         if (!file_exists($path_verif )) {
           $a = 1;
           $final_path = $path_verif;
@@ -57,10 +54,10 @@ require_once("../models/ImportModel.php");
     }
     if ($move) {
       $_SESSION["id"] = $import->id;
-      header('Location: ../views/sucess.php');
+      header('Location: sucess');
     }
     else {
-      header('Location: ../views/fail.php');
+      header('Location: fail');
     }
   }
 

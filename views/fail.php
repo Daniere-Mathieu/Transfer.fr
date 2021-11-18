@@ -1,16 +1,21 @@
-<?php session_start();
+<?php
  if (!empty($_SESSION["Error"])) {
    $error = htmlentities($_SESSION["Error"]);
    ?>
   <!DOCTYPE html>
   <html lang="en" dir="ltr">
     <head>
-      <meta charset="utf-8">
-      <title></title>
+      <?php include_once("views/partials/head.php") ?>
     </head>
     <body>
-    <h1><?php echo $error; ?></h1>
+      <?php include_once("views/partials/header.php") ?>
+      <main class="main_sucess">
+        <h1><?php echo $error; ?></h1>
+      </main>
+    <?php include_once("views/partials/footer.php") ?>
     </body>
   </html>
 
-<?PHP } ?>
+<?PHP }
+  unset($_SESSION["Error"]);
+?>

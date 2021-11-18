@@ -1,6 +1,5 @@
 <?php
-require_once("../class/FileStorage.php");
-require_once("../class/Import.php");
+require_once("class/FileStorage.php");
 class ImportModel {
   public static function createImport($import){
     $stockage = new FileStorage("storage.csv");

@@ -3,7 +3,7 @@
     <h1>Tranfer.fr</h1>
   </div>
   <div class="right_side_header">
-    <p><a href="../views/home.php">Accueil</a></p>
+    <p><a href="home">Accueil</a></p>
     <div class="div_right_side_header">
       <form>
         <input type="search" id="searchInput" name="searchInput" placeholder="WIP">

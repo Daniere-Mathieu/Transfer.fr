@@ -5,7 +5,7 @@
     private $data = [];
 
     public function __construct($table) {
-      $this->filename = "/Applications/MAMP/htdocs/transfer.fr/data/" . $table;
+      $this->filename = "data/" . $table;
       $this->file = fopen($this->filename, "a+");
       while ( ($row = fgetcsv($this->file) ) !== FALSE ) {
       array_push($this->data, $row);

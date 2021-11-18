@@ -8,7 +8,7 @@
         <div class="sucess_div_main">
           <h1><?= $dataDL[1]?></h1>
           <h3><?=$filename[1] ?></h3>
-          <a href="storage/01_PHP_install.pdf" download>download here</a>
+          <a href="<?= $dataDL[5]?>" download>download here</a>
           <form class="" action="controllerDelete" method="post">
             <input type="text" name="token" value="" placeholder="token de supression">
             <input type="hidden" name="file" value="<?php echo $name ?>">
@@ -20,4 +20,3 @@
     <?php include_once("views/partials/footer.php") ?>
   </body>
 </html>
-<?= $dataDL[5]?>

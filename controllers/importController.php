@@ -45,7 +45,8 @@
         }
       }
     }
-    $import = new Import($name,$_FILES["file"]["size"],$final_path);
+    $path_Storage = "transfer.fr/" . $final_path;
+    $import = new Import($name,$_FILES["file"]["size"],$path_Storage);
     ImportModel::createImport($import);
     try {
       $move = move_uploaded_file($_FILES["file"]["tmp_name"],$final_path);

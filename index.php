@@ -10,14 +10,14 @@
 
   switch ($page) {
     case "":
-    include("views/home.php");
+    include_once("views/home.php");
     break;
     case 'home':
-    include("views/home.php");
+    include_once("views/home.php");
       break;
       case 'controller':
       if (!empty($_FILES["file"]) && !empty($_POST["name"])) {
-        include("controllers/importController.php");
+        include_once("controllers/importController.php");
         die();
       }
       else {
@@ -29,7 +29,7 @@
       case 'sucess':
       if (!empty($_SESSION["id"])) {
         $data = ImportModel::getImport($_SESSION["id"]);
-        include("views/sucess.php");
+        include_once("views/sucess.php");
       }
       else {
         header('Location: home.php');
@@ -37,7 +37,7 @@
       }
         break;
       case 'fail':
-      include("views/fail.php");
+      include_once("views/fail.php");
         break;
       case 'download':
         if (!empty($url[2])) {
@@ -50,12 +50,22 @@
         if (ImportModel::verificationName($name)) {
           $dataDL = ImportModel::getImportByName($name);
           $filename = explode("/",$dataDL[5]);
-          include("views/download.php");
+          include_once("views/download.php");
         }
 
         break;
+      case "controllerDelete":
+      if (!empty($_POST["token"]) && !empty($_POST["file"])) {
+        $verif = true;
+        include_once("controllers/deleteController.php");
+      }
+      else {
+          $verif = true;
+          include_once("controllers/deleteController.php");
+      }
+        break;
     default:
-      include("views/404.php");
+      include_once("views/404.php");
       break;
   }
 

@@ -7,11 +7,11 @@
       <div class="div_sucess_main">
         <div class="sucess_div_main">
           <h1><?= $dataDL[1]?></h1>
-          <h3><?=$filename[1] ?></h3>
-          <a href="<?= $dataDL[5]?>" download>download here</a>
-          <form class="" action="controllerDelete" method="post">
+          <h3><?=$filename[2] ?></h3>
+          <a href="<?= $dataDL[5]?>" download="<?= $filename[2]?>">download here</a>
+          <form class="" action="../controllerDelete" method="post">
             <input type="text" name="token" value="" placeholder="token de supression">
-            <input type="hidden" name="file" value="<?php echo $name ?>">
+            <input type="hidden" name="file" value="<?= $name ?>">
             <button type="submit" name="button">Supprimer</button>
           </form>
         </div>
